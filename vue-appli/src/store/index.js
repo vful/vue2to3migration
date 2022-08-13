@@ -1,13 +1,27 @@
+// Vue3への変更に伴いコメントアウト ここから
+/*
 import Vue from 'vue'
 import Vuex from 'vuex'
+*/
+// Vue3への変更に伴いコメントアウト ここまで
+// Vue3への変更に伴い追加 ここから
+import { createStore } from "vuex";
+// Vue3への変更に伴い追加 ここまで
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { db } from "../main";
 import { runTransaction, setDoc, doc, getDoc, increment } from "firebase/firestore";
 import router from '@/router';
 
-Vue.use(Vuex)
+// Vue3への変更に伴いコメントアウト ここから
+// Vue.use(Vuex)
+// Vue3への変更に伴いコメントアウト ここまで
 
-export default new Vuex.Store({
+// Vue3への変更に伴いコメントアウト ここから
+// export default new Vuex.Store({
+// Vue3への変更に伴いコメントアウト ここまで
+// Vue3への変更に伴い追加 ここから
+export default createStore({
+// Vue3への変更に伴い追加 ここまで
     state: {
         user: null
         // myUID: null

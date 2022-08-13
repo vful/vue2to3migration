@@ -1,11 +1,24 @@
+// Vue3への変更に伴いコメントアウト ここから
+/*
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+*/
+// Vue3への変更に伴いコメントアウト ここまで
+// Vue3への変更に伴い追加 ここから
+import { createRouter, createWebHistory } from 'vue-router'
+// Vue3への変更に伴い追加 ここまで
 import HomeView from '../views/HomeView.vue'
-import Vuex from 'vuex'
+// Vue3への変更に伴いコメントアウト ここから
+// import Vuex from 'vuex'
+// Vue3への変更に伴いコメントアウト ここまで
 import store from '@/store/index';
 
+// Vue3への変更に伴いコメントアウト ここから
+/*
 Vue.use(Vuex)
 Vue.use(VueRouter)
+*/
+// Vue3への変更に伴いコメントアウト ここまで
 
 const routes = [
   {
@@ -35,10 +48,19 @@ const routes = [
   }
 ]
 
+// Vue3への変更に伴いコメントアウト ここから
+/*
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
 })
+*/
+// Vue3への変更に伴い追加 ここから
+const router = createRouter({
+  history: createWebHistory(process.env.BASE_URL),
+  routes
+})
+// Vue3への変更に伴い追加 ここまで
 
 export default router

@@ -1,27 +1,57 @@
-import Vue from 'vue'
+// Vue3への変更に伴いコメントアウト ここから
+// import Vue from 'vue' 
+// Vue3への変更に伴いコメントアウト ここまで
+// Vue3への変更に伴い追加 ここから
+import { createApp } from 'vue'
+// Vue3への変更に伴い追加 ここまで
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import { initializeApp } from 'firebase/app'
+// Firestoreから発行されるソース内に含まれるためコメントアウト ここから
+// import { initializeApp } from 'firebase/app'
+// Firestoreから発行されるソース内に含まれるためコメントアウト ここまで
 import { getFirestore } from 'firebase/firestore'
 
-Vue.config.productionTip = false
+// Vue3への変更に伴いコメントアウト ここから
+// Vue.config.productionTip = false
+// Vue3への変更に伴いコメントアウト ここまで
 
-// export 
+// #####################################################
+// ここから下のサンプルコードを削除し、Firebaseで発行されたSDKのソースコードを貼り付けてください
+// #####################################################
+
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAW43W74yhGfWI-Owya1YxczF9YQL8szYk",
-  authDomain: "vue4-1.firebaseapp.com",
-  projectId: "vue4-1",
-  storageBucket: "vue4-1.appspot.com",
-  messagingSenderId: "84933460362",
-  appId: "1:84933460362:web:a6ed3d284cefefa50fc873"
+  apiKey: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+  authDomain: "XXXXXXXXXXXXXXXXX.firebaseapp.com",
+  projectId: "XXXXXXXXXXXXXXXXX",
+  storageBucket: "XXXXXXXXXXXXXXXXX.appspot.com",
+  messagingSenderId: "XXXXXXXXXXXX",
+  appId: "1:XXXXXXXXXXXX:web:XXXXXXXXXXXXXXXX"
 };
 
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
+
+// #####################################################
+// ここから上のサンプルコードを削除し、Firebaseで発行されたSDKのソースコードを貼り付けてください
+// #####################################################
 export const db = getFirestore(app);
 
+// Vue3への変更に伴いコメントアウト ここから
+/*
 new Vue({
   router,
   store,
   render: function (h) { return h(App) },
 }).$mount('#app')
+*/
+// Vue3への変更に伴いコメントアウト ここまで
+// Vue3への変更に伴い追加 ここから
+createApp(App).use(store).use(router).mount('#app') 
+// Vue3への変更に伴い追加 ここまで
