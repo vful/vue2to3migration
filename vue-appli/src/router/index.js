@@ -1,5 +1,11 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import Vue from 'vue'
+import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import Vuex from 'vuex'
+import store from '@/store/index';
+
+Vue.use(Vuex)
+Vue.use(VueRouter)
 
 const routes = [
   {
@@ -13,12 +19,25 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    component: () => import('../views/AboutView.vue')
+  },
+  {
+    path: '/dashboard',
+    name: 'dashboard',
+    beforeEnter: (to, from, next) => {
+      if(!store.getters.user){
+        console.log(store.getters.user);
+        next('/');
+      }
+      next();
+    },
+    component: () => import('../views/DashboardView.vue')
   }
 ]
 
-const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+const router = new VueRouter({
+  mode: 'history',
+  base: process.env.BASE_URL,
   routes
 })
 
