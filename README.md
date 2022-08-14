@@ -11,7 +11,7 @@ vue <command> [options]
 ```
 と実行するところを
 ```
-./node_modules/@vue/cli/bin/vue.js create <command> [options]
+./node_modules/@vue/cli/bin/vue.js <command> [options]
 ```
 と実行してください。  
   
